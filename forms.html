@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>HTML Forms Assignment</title>
+
+</head>
+
+<body>
+  <h1>User Information Form</h1>
+  <form id="userForm" action="#" method="post">
+    <br/>
+    
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <br/>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <br/>
+
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+    </div>
+    <br/>
+
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+      <small>Format: 10-digit number</small>
+    </div>
+    <br/>
+
+    <div>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+    </div>
+    <br/>
+
+    <div>
+      <label for="country">Country of Residence:</label>
+      <select id="country" name="country" required>
+
+        <option value="" disabled selected>Select your country</option>
+        <option value="Kenya">USA</option>
+        <option value="Ghana">Canada</option>
+        <option value="Nigeria">UK</option>
+        
+      </select>
+    </div>
+    <br/>
+
+    <div>
+      <label>Gender:</label>
+      <label for="male">Male</label>
+      <input type="radio" id="male" name="gender" value="Male" required>
+      <label for="female">Female</label>
+      <input type="radio" id="female" name="gender" value="Female" required>
+      <label for="other">Other</label>
+      <input type="radio" id="other" name="gender" value="Other" required>
+    </div>
+    <br/>
+
+    <div>
+      <label>Hobbies:</label>
+      <label for="reading">Reading</label>
+      <input type="checkbox" id="reading" name="hobbies" value="Reading">
+      <label for="sports">Sports</label>
+      <input type="checkbox" id="sports" name="hobbies" value="Sports">
+      <label for="music">Music</label>
+      <input type="checkbox" id="music" name="hobbies" value="Music">
+      <label for="travel">Travel</label>
+      <input type="checkbox" id="travel" name="hobbies" value="Travel">
+    </div>
+    <br/>
+
+    <div>
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments"></textarea>
+    </div>
+    <br/>
+
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    const form = document.getElementById('userForm');
+
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        // Display error messages for invalid fields
+        form.classList.add('was-validated');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
